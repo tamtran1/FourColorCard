@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>four color</title>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		
+		<script>
+			
+				/*
+				Array.prototype.shuffle = function () {
+					var i = this.length, j, temp;
+					while (--i > 0) {
+							j = Math.floor (Math.random () * (i + 1));
+							temp = this [j];
+							this [j] = this [i];
+							this [i] = temp;
+						}
+						return this;
+				}
+				
+				var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+				document.write (arr.shuffle() + "<br>");
+				
+				// Notes !!! drawImage (img, 
+										source frame indx * source frame width,
+										source frame indx * source frame height,
+										source frame width,
+										source frame height,
+										canvas horizontal position,
+										canvas vertical position,
+										intended frame horizontal scale size on canvas,
+										intended frame vertical scale size on canvas 
+										);
+				
+				*/
+				
+				cardWidth = 101;
+				cardHeight = 516;
+				
+				canvasHorPos = 52;
+				canvasVerPos = 260;				
+				
+				
+				var canvas = document.getElementById ('canvas')
+				canvas.width = 988; //get "intended frame horizontal scale size on canvas" * n to get intended canvas width
+				canvas.height = 560;
+				var context = canvas.getContext ("2d");
+				var img = new Image ();
+				img.src = "CardsSpriteSheet.png";
+				img.onload = function () {
+					
+					//context.drawImage (img, 0, 0, 102, 516, 0, 0, 102, 517); //this is the original full size
+					context.drawImage (img, (cardWidth * 0), (cardHeight * 0), 102, 516, (canvasHorPos * 0), canvasVerPos * 0, 51, 259);
+					context.drawImage (img, (cardWidth * 4), (cardHeight * 1), 102, 516, (canvasHorPos * 1), canvasVerPos * 0, 51, 259);
+					context.drawImage (img, (cardWidth * 3), (cardHeight * 2), 102, 516, (canvasHorPos * 2), canvasVerPos * 0, 51, 259);
+					context.drawImage (img, (cardWidth * 0), (cardHeight * 3), 102, 516, (canvasHorPos * 3), canvasVerPos * 0, 51, 259);
+					
+					context.drawImage (img, (cardWidth * 5), (cardHeight * 1), 102, 516, (canvasHorPos * 5), canvasVerPos * 0, 51, 259);
+					context.drawImage (img, (cardWidth * 0), (cardHeight * 2), 102, 516, (canvasHorPos * 6), canvasVerPos * 0, 51, 259);
+					context.drawImage (img, (cardWidth * 0), (cardHeight * 3), 102, 516, (canvasHorPos * 7), canvasVerPos * 0, 51, 259);
+					context.drawImage (img, (cardWidth * 3), (cardHeight * 2), 102, 516, (canvasHorPos * 8), canvasVerPos * 0, 51, 259);
+					
+					context.drawImage (img, (cardWidth * 6), (cardHeight * 1), 102, 516, (canvasHorPos * 0), canvasVerPos * 1, 51, 259);
+					context.drawImage (img, (cardWidth * 2), (cardHeight * 3), 102, 516, (canvasHorPos * 1), canvasVerPos * 1, 51, 259);
+					context.drawImage (img, (cardWidth * 4), (cardHeight * 3), 102, 516, (canvasHorPos * 2), canvasVerPos * 1, 51, 259);
+					context.drawImage (img, (cardWidth * 1), (cardHeight * 2), 102, 516, (canvasHorPos * 3), canvasVerPos * 1, 51, 259);
+					
+					context.drawImage (img, (cardWidth * 1), (cardHeight * 0), 102, 516, (canvasHorPos * 5), canvasVerPos * 1, 51, 259);
+					context.drawImage (img, (cardWidth * 2), (cardHeight * 3), 102, 516, (canvasHorPos * 6), canvasVerPos * 1, 51, 259);
+					context.drawImage (img, (cardWidth * 6), (cardHeight * 1), 102, 516, (canvasHorPos * 7), canvasVerPos * 1, 51, 259);
+					context.drawImage (img, (cardWidth * 3), (cardHeight * 2), 102, 516, (canvasHorPos * 8), canvasVerPos * 1, 51, 259);
+					
+					context.drawImage (img, (cardWidth * 5), (cardHeight * 4), 102, 516, (canvasHorPos * 10), canvasVerPos * 1, 51, 259);
+					
+				}
+			
+		</script>
+		<br><img src="CardsSpriteSheet.png"></img>
+	</body>
+</html>
